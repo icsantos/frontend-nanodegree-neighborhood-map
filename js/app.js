@@ -68,7 +68,7 @@ var placesOfInterest = [
     position: {lat: 38.633608, lng: -90.200436},
     address: '750 N 16th St, St. Louis, MO 63103',
     website: 'http://www.citymuseum.org',
-    description: 'Constantly evolving art installation, playground & discovery center made from found objects'
+    description: 'Constantly evolving art installation, playground & discovery center made from found objects',
     image: 'citymuseum.jpg',
     imageSrc: 'http://members.explorestlouis.com/images/memberImages/cityMuseum2.jpg'
   },
@@ -77,7 +77,7 @@ var placesOfInterest = [
     position: {lat: 38.625674, lng: -90.189274},
     address: '11 N 4th St, St. Louis, MO 63102',
     website: 'http://www.gatewayarch.com/experience/old-courthouse.aspx',
-    description: 'Former slave Dred Scott sued for freedom in this courthouse, now offering tours & history exhibits'
+    description: 'Former slave Dred Scott sued for freedom in this courthouse, now offering tours & history exhibits',
     image: '',
     imageSrc: 'https://commons.wikimedia.org/wiki/File:STL_Old_Courthouse_JNEM.jpg'
   },
@@ -86,7 +86,7 @@ var placesOfInterest = [
     position: {lat: 38.600291, lng: -90.213532},
     address: '1200 Lynch St, St. Louis, MO 63118',
     website: 'http://www.budweisertours.com/locations/st-louis-missouri.html',
-    description: 'The brewery, opened in 1852 by German immigrant Adolphus Busch, is designated as a National Historic Landmark District'
+    description: 'The brewery, opened in 1852 by German immigrant Adolphus Busch, is designated as a National Historic Landmark District',
     image: 'anheuserbusch.jpg',
     imageSrc: 'http://members.explorestlouis.com/images/memberImages/ab2.jpg'
   }
@@ -100,3 +100,14 @@ var Place = function(place) {
   this.description = ko.observable(place.description);
   this.image = ko.observable('img/' + place.image);
 };
+
+var ViewModel = function() {
+  var self = this;
+  
+  this.places = ko.observableArray([]);
+  placesOfInterest.forEach(function(place) {
+    self.places.push(new Place(place));
+  });
+};
+
+ko.applyBindings(new ViewModel());
