@@ -1,4 +1,4 @@
-// http://www.latlong.net/convert-address-to-lat-long.html
+//http://www.latlong.net/convert-address-to-lat-long.html
 var placesOfInterest = [
   {
     name: 'Missouri History Museum',
@@ -98,7 +98,7 @@ var Place = function(place) {
   this.address = ko.observable(place.address);
   this.website = ko.observable(place.website);
   this.description = ko.observable(place.description);
-  this.image = ko.observable('img/' + place.image);
+  this.image = ko.observable(place.image);
 };
 
 var ViewModel = function() {

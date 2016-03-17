@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <title>Neighborhood Map</title>
-</head>
-<body>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div id="map"></div>
     <div id="place" data-bind="foreach: placesOfInterest">
-        <h2 data-bind="text: name"></h2>
-        <p data-bind="text: description"></p>
-        <p data-bind="text: address"></p>
+      <h2 data-bind="text: name"></h2>
+      <img src="" alt="" data-bind="attr: {src: 'img/' + image, alt: name}">
+      <p data-bind="text: description"></p>
+      <p data-bind="text: address"></p>
     </div>
     <script src="js/knockout-3.4.0.js"></script>
     <script src="js/app.js"></script>
-</body>
+  </body>
 </html>
